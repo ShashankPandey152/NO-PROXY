@@ -326,6 +326,15 @@ class TeacherView: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         otpLabel.text = ""
         
+        self.doTextField.layer.borderColor = UIColor(displayP3Red: 51/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+        self.doTextField.layer.borderWidth = CGFloat(Float(2.0))
+        self.doTextField.layer.cornerRadius = CGFloat(Float(10.0))
+        self.courseTextField.layer.borderColor = UIColor(displayP3Red: 51/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+        self.courseTextField.layer.borderWidth = CGFloat(Float(2.0))
+        self.courseTextField.layer.cornerRadius = CGFloat(Float(10.0))
+        self.slotHourTextField.layer.borderColor = UIColor(displayP3Red: 51/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+        self.slotHourTextField.layer.borderWidth = CGFloat(Float(2.0))
+        self.slotHourTextField.layer.cornerRadius = CGFloat(Float(10.0))
         
     }
 
