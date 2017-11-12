@@ -95,7 +95,7 @@ class TeacherView: UIViewController, UITableViewDelegate, UITableViewDataSource,
                                     
                                     self.present(alert, animated: true, completion: nil)
                                     
-                                } else {
+                                } else if(status == 1) {
                                     
                                     let alert = UIAlertController(title: "Success!!", message: "OTP generated successfully!", preferredStyle: .alert)
                                     
@@ -109,6 +109,16 @@ class TeacherView: UIViewController, UITableViewDelegate, UITableViewDataSource,
                                     self.courseTextField.text = ""
                                     self.slotHourTextField.text = ""
                                     self.otpLabel.text = String(describing: otp!)
+                                    
+                                } else if(status == 2) {
+                                    
+                                    let alert = UIAlertController(title: "Success!!", message: "Course and slot do not match!", preferredStyle: .alert)
+                                    
+                                    let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                                    
+                                    alert.addAction(ok)
+                                    
+                                    self.present(alert, animated: true, completion: nil)
                                     
                                 }
                                 

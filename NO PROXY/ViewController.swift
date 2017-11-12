@@ -80,9 +80,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                                 
                                                 if(accountType == 1) {
                                                     
+                                                    UserDefaults.standard.set(self.logEmail.text, forKey: "Email")
+                                                    UserDefaults.standard.set(self.logPassword.text, forKey: "Password")
+                                                    UserDefaults.standard.synchronize()
+                                                    
                                                     self.performSegue(withIdentifier: "segue2", sender: nil)
                                                     
                                                 } else if(accountType == 2) {
+                                                    
+                                                    UserDefaults.standard.set(self.logEmail.text, forKey: "Email")
+                                                    UserDefaults.standard.set(self.logPassword.text, forKey: "Password")
+                                                    UserDefaults.standard.synchronize()
                                                     
                                                     self.performSegue(withIdentifier: "segue1", sender: nil)
                                                     
@@ -195,6 +203,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.logPassword.layer.borderColor = UIColor(displayP3Red: 51/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
         self.logPassword.layer.borderWidth = CGFloat(Float(2.0))
         self.logPassword.layer.cornerRadius = CGFloat(Float(10.0))
+        
+        let emailObject = UserDefaults.standard.object(forKey: "Email")
+        let passwordObject = UserDefaults.standard.object(forKey: "Password")
+        
+        if let email = emailObject as? String  {
+            
+            logEmail.text = email
+            
+        }
+        
+        if let password = passwordObject as? String {
+            
+            logPassword.text = password
+            
+        }
         
     }
 
