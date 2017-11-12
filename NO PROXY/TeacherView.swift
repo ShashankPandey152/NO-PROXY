@@ -321,8 +321,8 @@ class TeacherView: UIViewController, UITableViewDelegate, UITableViewDataSource,
 
         // Do any additional setup after loading the view.
         
-        nameLabel.text = name
-        tidLabel.text = tid
+        nameLabel.text = "Name: " + name
+        tidLabel.text = "Teacher Id: " + tid
         
         otpLabel.text = ""
         
